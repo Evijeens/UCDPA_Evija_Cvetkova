@@ -72,14 +72,14 @@ def payment_methods(data):
     pay = {}
     for method in payments:
         pay[method] = data['PaymentMethod'].str.count(method).sum()
-        return pay
+    return pay
 
 
 
 if __name__ == '__main__':
 
     data = read_file()
-    median_total_charges, median_monthly_charges = median(data)
+    median_total_charges, median_monthly_charges = median(data)Snip20210420_1.png
     data = drop_column(data)
     change_variable(data)
     number_of_missing_values = check_missing_values(data)
